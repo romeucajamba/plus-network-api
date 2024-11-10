@@ -1,11 +1,11 @@
 version: '25.0.2'
 
 services:
-    academy-solid-pg:
-      image: bitnami/postgresql
-      ports:
-        -5432:5432
-      enviroment:
-        - POSTGRESQL_USERNAME=mypstgresdb
-        - POSTGRESQL_PASSWORD=root
-        - POSTGRESQL_DATABASE=api-solid
+  plus-network-pg:
+    image: bitnami/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRESQL_USERNAME=mypstgresdb
+      - POSTGRESQL_PASSWORD=root
+      - POSTGRESQL_DATABASE=api-plusnet
