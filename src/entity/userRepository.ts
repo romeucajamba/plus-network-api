@@ -1,0 +1,1 @@
+//Minha interface do repositorio
