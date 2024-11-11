@@ -7,7 +7,7 @@ const schemaEnv = z.object({
     NODE_ENV: z.enum(['dev', 'test', 'production']).default('dev'),
     PORT: z.coerce.number().default(4000),
     DATABASE_URL: z.string(),
-    DATABASE_CLIENT: z.enum(["mysql", "pg", "sqlite"]).default("mysql"),
+    DATABASE_CLIENT: z.enum(["mysql", "pg", "sqlite"]).default("pg"),
 })
 
 const _env = schemaEnv.safeParse(process.env)
