@@ -2,7 +2,7 @@
 
 ## 📖 Descrição do Projeto
 
-Plus network é uma aplicação ..
+Plus network é uma aplicação voltada para candidaturas a vagas de trabalho, uma plataforma moderna e facil de usar.
 
 --
 

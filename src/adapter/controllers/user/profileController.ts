@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { getUserFactory } from "../../factories/getUserFactory";
+import { getUserFactory } from "../../factories/user/getUserFactory";
 
 export async function userProfileController(request: FastifyRequest, reply: FastifyReply){
 

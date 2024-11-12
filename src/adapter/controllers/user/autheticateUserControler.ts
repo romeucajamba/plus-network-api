@@ -1,7 +1,7 @@
-import { FastifyRequest, FastifyReply } from "fastify";
-import z  from "zod";
-import { InvalidCredentials, BadRequest } from "../../../shared/error/error";
-import { autheticateUserFactory } from "../../factories/autheticateUserFactory";
+import { FastifyReply, FastifyRequest } from "fastify";
+import z from "zod";
+import { BadRequest, InvalidCredentials } from "../../../shared/error/error";
+import { autheticateUserFactory } from "../../factories/user/autheticateUserFactory";
 
 export async function autheticateUserController(request: FastifyRequest, reply: FastifyReply){
       
