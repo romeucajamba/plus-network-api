@@ -1,7 +1,7 @@
-import { FastifyRequest, FastifyReply } from "fastify";
-import z  from "zod";
-import { EmailExists, BadRequest } from "../../../shared/error/error";
-import { insertUserFactory } from "../../factories/insertUserFactory";
+import { FastifyReply, FastifyRequest } from "fastify";
+import z from "zod";
+import { BadRequest, EmailExists } from "../../../shared/error/error";
+import { insertUserFactory } from "../../factories/user/insertUserFactory";
 
 export async function insertUserController(request: FastifyRequest, reply: FastifyReply){
       

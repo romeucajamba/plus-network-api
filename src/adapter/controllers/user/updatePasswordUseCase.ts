@@ -1,7 +1,7 @@
-import { FastifyRequest, FastifyReply } from "fastify";
-import z  from "zod";
-import { EmailExists, BadRequest } from "../../../shared/error/error";
-import { updatePaswordFactory } from "../../factories/updatePasswordFactory";
+import { FastifyReply, FastifyRequest } from "fastify";
+import z from "zod";
+import { BadRequest, EmailExists } from "../../../shared/error/error";
+import { updatePaswordFactory } from "../../factories/user/updatePasswordFactory";
 
 export async function updatePasswordController(request: FastifyRequest, reply: FastifyReply){
       const paramsSchema = z.object({

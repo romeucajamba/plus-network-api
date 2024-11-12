@@ -5,7 +5,8 @@ import { ZodError } from 'zod';
 import fastifyCors from "@fastify/cors";
 import fastifyJwt from "@fastify/jwt";
 import fastifyCookie from "@fastify/cookie";
-import { UserRouter } from "./adapter/routes/userRoute.routes"
+import { UserRouter } from "./adapter/routes/userRoute.routes";
+import {jobRoutes} from "./adapter/routes/jobRoutes.routes";
 
 export const app = fastify();
 
@@ -31,6 +32,7 @@ app.register(fastifyCookie);
 swaggerSetup(app);
 
 app.register(UserRouter)
+app.register(jobRoutes)
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
     return reply.status(400).send({ message: 'Validation error.', issues: error.format() });

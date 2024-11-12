@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -25,9 +25,41 @@ model User {
   password_hash String
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+
+  applications Application[]
+  savedJobs   SavedJob[]
 }
 
 enum Gender {
   MALE
   FEMALE
+}
+
+model Job {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  company     String
+  applications Application[]
+  savedBy     SavedJob[]
+}
+
+model Application {
+  id       Int    @id @default(autoincrement())
+  userId   String
+  jobId    Int
+  appliedAt DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id])
+  job Job @relation(fields: [jobId], references: [id])
+}
+
+model SavedJob {
+  id       Int    @id @default(autoincrement())
+  userId String
+  jobId    Int
+  savedAt  DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id])
+  job  Job  @relation(fields: [jobId], references: [id])
 }

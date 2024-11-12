@@ -1,5 +1,5 @@
-import { UserDataBase } from "../../entity/user/implementations/userDataBase";
-import { AuthenticateUserUseCase } from "../../service/useCase/user/authUseCase";
+import { UserDataBase } from "../../../entity/user/implementations/userDataBase";
+import { AuthenticateUserUseCase } from "../../../service/useCase/user/authUseCase";
 
 export const autheticateUserFactory = () => {
     const repository = new UserDataBase();
