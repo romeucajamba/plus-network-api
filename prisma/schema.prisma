@@ -14,12 +14,20 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
+  id String @id @default(uuid())
   userPicture String
   fullName String
   email String @unique
-  gender String
-  age String
+  gender Gender
+  age Int
   phone String
   country String
+  password_hash String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
 }
