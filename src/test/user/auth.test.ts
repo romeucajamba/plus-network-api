@@ -1,8 +1,8 @@
 import { hash } from "bcryptjs";
 import { describe, expect, test } from "vitest";
-import { InMemoryUserRepository } from "../entity/user/implementations/user-inMemmoryDataBase";
-import { AuthenticateUserUseCase } from "../service/useCase/user/authUseCase";
-import { InvalidCredentials } from "../shared/error/error";
+import { InMemoryUserRepository } from "../../entity/user/implementations/user-inMemmoryDataBase";
+import { AuthenticateUserUseCase } from "../../service/useCase/user/authUseCase";
+import { InvalidCredentials } from "../../shared/error/error";
 
 
 describe("Authenticase use case", () => {
